@@ -1,0 +1,304 @@
+package main;
+
+import java.util.Scanner;
+
+public class main {
+
+	public static void main(String[] args) {
+
+    //main groups
+    int[] i7 = {1,3,11,19,37,55,87} ;
+    int[] ii6 = {4,12,20,38,56,88} ;
+    int[] iii6 = {5,13,31,49,81,113} ;
+    int[] iv6 = {6,14,32,50,82,114} ;
+    int[] v6 = {7,15,33,51,83,115} ;
+    int[] vi6 = {8,16,34,52,84,116} ;
+    int[] vii6 = {9,17,35,53,85,117} ; //or 7
+    int[] viii7 = {2,10,18,36,54,86,118} ;
+
+    //hno and sulphur
+    int[] hno3 = {1,7,8} ;
+    int s = 16;
+
+ /////////////////////////////////////////////////////////////////////////////////
+
+    int a, b;
+    int d2;
+
+ 	int x4; //educt1 x0: menge < x1: anzahl p+ < x2: Molekuel  < x3: count
+	int y4; //educt2
+	int z5; //product1 z0: Menge < z1: anzahl p+ x < z2: < z3:anzahl p+ y < z4:
+
+	System.out.println( "REDOXREACTION CALCULATOR" );
+	System.out.println( "########################" );
+    System.out.println( " programmed by XU42, portet by Minox" );
+
+    System.out.println ("Bitte gebe dein 1. Edukt ein! ");
+    System.out.println (": ");
+    
+    int[] x = new int[3];
+    int[] y = new int[3];
+    int[] z = new int[3];
+    
+    Scanner scanner = new Scanner(System.in);
+    x[1] = scanner.nextInt(); //enter number of protons of educt 1
+
+	System.out.println ("Bitte gebe dein 2. Edukt ein!");
+	System.out.println (":");
+         
+    y[1] = scanner.nextInt(); //enter number of protons of educt 1
+
+	z[1] = x[1];
+	z[3] = y[1];
+
+	x[2] = 1; //default
+	y[2] = 1; //default
+
+//verschobene e- berechnen
+	int c;
+
+	for(c = 0; c < 7; c++)
+		{
+			if(x[1]	== i[c])
+			{
+				x[3] = 1;
+				}
+			}
+	for(c = 0; c < 6; c++)
+		{
+			if(x[1]	== ii[c])
+			{
+				x[3] = 2;
+				}
+			}
+	for(c = 0; c < 6; c++)
+		{
+			if(x[1]	== iii[c])
+			{
+				x[3] = 3;
+				}
+			}
+	for(c = 0; c < 6; c++)
+		{
+			if(x[1]	== iv[c])
+			{
+				x[3] = 4;
+				}
+			}
+	for(c = 0; c < 6; c++)
+		{
+			if(x[1]	== v[c])
+			{
+				x[3] = 3;
+				}
+			}
+	for(c = 0; c < 6; c++)
+		{
+			if(x[1]	== vi[c])
+			{
+				x[3] = 2;
+				}
+			}
+	for(c = 0; c < 6; c++)
+		{
+			if(x[1]	== vii[c])
+			{
+				x[3] = 1;
+				x[2] = 2;
+				System.out.println(x[1] + " ist ein Halogen");
+				}
+			}
+	for(c = 0; c < 7; c++)
+		{
+			if(x[1]	== viii[c])
+			{
+				x[3] = 0;
+				}
+
+       			}
+//auf H,N oder O pruefen
+
+	if(x[1] == hno[0] || x[1] == hno[1] || x[1] == hno[2])
+	{
+
+		cout << x[1] << " ist entweder H,N oder O" << endl;
+		x[2] = 2;
+
+		}
+
+//auf S pruefen
+
+	if(x[1] == s)
+	{
+		//check if element is sulphur^
+		cout << x[1] << " ist Schwefel" << endl;
+		x[2] = 8;
+		}
+
+
+
+
+
+
+	//e- fuer y
+
+	for(c = 0; c < 7; c++)
+		{
+			if(y[1]	== i[c])
+			{
+				y[3] = 1;
+				}
+			}
+	for(c = 0; c < 6; c++)
+		{
+			if(y[1]	== ii[c])
+			{
+				y[3] = 2;
+				}
+			}
+	for(c = 0; c < 6; c++)
+		{
+			if(y[1]	== iii[c])
+			{
+				y[3] = 3;
+				}
+			}
+	for(c = 0; c < 6; c++)
+		{
+			if(y[1]	== iv[c])
+			{
+				y[3] = 4;
+				}
+			}
+	for(c = 0; c < 6; c++)
+		{
+			if(y[1]	== v[c])
+			{
+				y[3] = 3;
+				}
+			}
+	for(c = 0; c < 6; c++)
+		{
+			if(y[1]	== vi[c])
+			{
+				y[3] = 2;
+				}
+			}
+	for(c = 0; c < 6; c++)
+		{
+			if(y[1]	== vii[c])
+			{
+				y[3] = 1;
+				y[2] = 2;
+				cout << y[1] << " ist ein Halogen" << endl;
+				}
+			}
+	for(c = 0; c < 7; c++)
+		{
+			if(y[1]	== viii[c])
+			{
+				y[3] = 0;
+				}
+			}
+//y
+	if(y[1] == hno[0] || y[1] == hno[1] || y[1] == hno[2])
+	{
+
+		cout << y[1] << " ist entweder H,N oder O" << endl;
+		y[2] = 2;
+
+		}
+	if(y[1] == s)
+	{
+		//check if element is sulphur^
+		cout << y[1] << " ist Schwefel" << endl;
+		y[2] = 8;
+		}
+
+
+	if(x[3] == 0 || y[3] == 0)
+		{
+			System.out.println ( "Deine Reaktion enthaelt ein Edelgas" );
+            System.out.println ("beende Programm..." );
+
+			cin.sync();
+			cin.get();
+			return 100;
+			}
+
+    //neue rechenmethode
+    int tmp[2];
+
+    x[0] = 1; //Mindestanzahl sichern
+    y[0] = 1;
+
+    tmp[0] = x[3];
+    tmp[1] = y[3];
+
+    x[3] = x[3] * x[2];
+    y[3] = y[3] * y[2];
+
+    a = x[3];
+    b = y[3];
+
+    x[0] = (kgv(a,b) / x[3]) * x[0];
+    y[0] = (kgv(a,b) / y[3]) * y[0];
+
+    cout << endl
+         << x[0] << "|" << x[1] << "|" << x[2] << " + " << y[0] << "|" << y[1] << "|" << y[2] << /*"(total amount of moved Electrons: "*/ endl
+         << "---> " << endl;
+
+    if(x[2] >= 2)
+    {
+        x[0] = x[2];
+        }
+
+    if(y[2] >= 2)
+    {
+        y[0] = y[2];
+        }
+
+    cout << x[0] << "|" << x[1] << "(each moved: " << tmp[0] << " ) + " << y[0] << "|" << y[1] << "(each moved: " << tmp[1] << " )" << endl;
+
+    //############################
+
+    z[1] = x[1];
+    z[3] = y[1];
+
+    z[2] = kgv(a,b) / tmp[0];
+    z[4] = kgv(a,b) / tmp[1];
+    z[0] = 1;
+
+
+
+    cin.sync();
+    cin.get();
+	return 0;
+}
+
+	int kgv(int a, int b) {
+		return (a * b) / ggt(a, b);
+	}
+
+	int ggt(int a, int b) {
+		int r;
+
+		do {
+
+			if (a < b) {
+				r = a;
+				a = b;
+				b = r;
+			}
+
+			r = a % b;
+
+			if (r != 0) {
+				a = b;
+				b = r;
+			}
+		} while (r != 0);
+
+		return b;
+	}
+}
